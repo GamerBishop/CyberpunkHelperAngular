@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
+import { Router, RouterModule } from '@angular/router';
 import { Users } from 'src/classes/users';
+import { AppRoutingModule } from './app-routing.module';
 import { LoginService } from './login-service.service';
 
 @Component({
@@ -12,11 +14,13 @@ export class AppComponent {
   subtitle = 'Choisis la meilleure alternative pour survivre';
 
   _UserConnected!: Users;
+  userHere : boolean;
+  UserRole : string;
 
   loginbtn: boolean;
   logoutbtn: boolean;
 
-  constructor(private loginService: LoginService) {
+  constructor(private loginService: LoginService, private router : Router) {
     loginService.getLoggedInName.subscribe(name => {
       this.changeName(name);
       this._UserConnected = this.loginService._UserConnected;
@@ -31,7 +35,12 @@ export class AppComponent {
     else {
       this.loginbtn = true;
       this.logoutbtn = false
+      
+      router.navigate(['login']);
     }
+
+    this.userHere = this.loginService.getUserConnected();
+    this.UserRole = this.loginService.getRole();
   }
 
   private changeName(name: boolean): void {
@@ -40,7 +49,8 @@ export class AppComponent {
   }
 
   logout() {
-    this.loginService.deleteToken();
+    this.loginService.deleteUserConnected();
+    this.loginService.deleteRole();
     window.location.href = window.location.href;
   }
 }

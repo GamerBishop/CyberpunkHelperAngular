@@ -1,5 +1,4 @@
-import { AfterViewInit, Component, ViewChild, OnInit } from '@angular/core';
-import {MatPaginator} from '@angular/material/paginator';
+import { AfterViewInit, Component, ViewChild, OnInit } from '@angular/core'; 
 import {MatSort} from '@angular/material/sort';
 import {MatTableModule, MatTableDataSource} from '@angular/material/table';  
 

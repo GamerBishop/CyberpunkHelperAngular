@@ -1,20 +1,29 @@
 mat-table, td, th {
     border: 1px solid black; 
   }
-  div{
-    width: 70%;
-    margin-left: 15%;
-    margin-right: 15%;
-    background-color: rgb(103, 58, 183); 
+
+  div.Opacity{
+    margin-top: 20px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    margin-left: 10%;
+    margin-right: 10%;
+    width: 80%;
+  background-color: rgba(255, 255, 255, 0.3) ;
+  border-radius: 0.5em;
   }
+ 
   mat-table {
     display: table;
-    max-width: 100%;
-    width: 100%;
+    width: 80%;
+    margin-left: 10%;
+    margin-right: 10%;
     border-collapse: collapse;
     text-align: center;
   }
-
+ mat-input-element{
+    color: white;
+  }
   
   th{
       color : white;
@@ -35,6 +44,15 @@ mat-table, td, th {
 ::ng-deep .mat-sort-header-container {
   display: flex;
   justify-content: center;
+}
+
+::ng-deep .mat-form-field{ 
+  margin-left: 10%;
+  justify-content: center;
+  color: white;
+}
+  mat-label{
+  color: white;
 }
 
 ::ng-deep  .mat-sort-header-arrow {
