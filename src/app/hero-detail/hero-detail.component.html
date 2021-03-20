@@ -1,0 +1,48 @@
+<div id="TestMargin" *ngIf="_myHero">
+
+    
+<!--<h2>{{_myHero.Nom | uppercase}} Details</h2> -->
+<br/>
+<div> 
+    <mat-form-field class="example-full-width">
+      <mat-label id="LabelName">Hero Name</mat-label>
+      <input matInput id="hero-name" [(ngModel)]="_myHero.Nom" placeholder="Nom" >
+    </mat-form-field>
+    <div class="ClasseHeros"><span>Classe : </span> {{_myHero.Classe}}  </div> 
+</div>
+
+<br/>
+<table>
+  <tr>
+    <th><abbr title="Intelligence">INT</abbr></th>
+    <th><abbr title="Réflexes">REF</abbr></th>
+    <th><abbr title="Dextérité">DEX</abbr></th>
+    <th><abbr title="Technique">TECH</abbr></th>
+    <th><abbr title="Prestance">PRES</abbr></th>
+    <th><abbr title="Volonté">VOL</abbr></th>
+    <th><abbr title="Empathie">EMP</abbr></th>
+    <th><abbr title="Corps">COR</abbr></th>
+    <th><abbr title="Mouvement">MOUV</abbr></th>
+    <th><abbr title="Chance">CHA</abbr></th>
+  </tr>
+  <tr>
+    <td class="StatHero"><input id="hero-Int" [(ngModel)]="_myHero.Intelligence" placeholder="Intelligence"></td>
+    <td class="StatHero"><input id="hero-Ref" [(ngModel)]="_myHero.Reflexes" placeholder="Reflexes"></td>
+    <td class="StatHero"><input id="hero-Dex" [(ngModel)]="_myHero.Dexterite" placeholder="Dexterite"></td>
+    <td class="StatHero"><input id="hero-Tech" [(ngModel)]="_myHero.Technique" placeholder="Technique"></td>
+    <td class="StatHero"><input id="hero-Pres" [(ngModel)]="_myHero.Prestance" placeholder="Prestance"></td>
+    <td class="StatHero"><input id="hero-Vol" [(ngModel)]="_myHero.Volonte" placeholder="Volonte"></td>
+    <td class="StatHero"><input id="hero-Emp" [(ngModel)]="_myHero.Empathie" placeholder="Empathie"></td>
+    <td class="StatHero"><input id="hero-Cor" [(ngModel)]="_myHero.Corps" placeholder="Corps"></td>
+    <td class="StatHero"><input id="hero-Mouv" [(ngModel)]="_myHero.Mouvement" placeholder="Mouvement"></td>
+    <td class="StatHero"><input id="hero-Chance" [(ngModel)]="_myHero.Chance" placeholder="Chance"></td>
+  </tr>
+</table>
+<br/>
+<app-competences-perso></app-competences-perso>
+<br/>
+<div style="width : 100%; display: flex; justify-content: center; align-items: center;">
+<button mat-raised-button class='Save' (click)="save()">Save</button>
+<button mat-raised-button (click)="goBack()">Back</button>
+</div>
+</div>

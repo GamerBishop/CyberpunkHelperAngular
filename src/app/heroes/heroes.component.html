@@ -1,0 +1,10 @@
+<div class="Opacity">
+  <h2>My Heroes</h2>
+<ul class="Heroes">
+  <li *ngFor ="let Hero of Heroes" >
+    <a routerLink="/detail/{{Hero.Id}}">
+      <span class="badge">{{Hero.Id}}</span> {{Hero.Nom}}
+    </a>
+  </li>
+</ul>
+</div>

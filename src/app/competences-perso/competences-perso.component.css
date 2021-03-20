@@ -1,0 +1,25 @@
+h2{margin-top: 10px;
+background-color: black;
+border-radius: 0.5em;}
+
+div{ 
+  position: relative;
+}
+.listCentered {
+  display :block;
+  justify-content: center;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+  .CompChipList{ 
+    display: flex; 
+    flex-wrap: wrap; 
+    justify-content: center; 
+    align-items: center; 
+  }
+     
+  .CompChipList>*{
+    flex:auto;
+
+  }

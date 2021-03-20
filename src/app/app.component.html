@@ -1,0 +1,16 @@
+<body>
+   <br/>
+<h1>{{title}}</h1>
+<h2>{{subtitle}}</h2>
+
+<nav *ngIf="_UserConnected!"> 
+    <a routerLink="/dashboard"  routerLinkActive="active">Dashboard</a>
+    <a routerLink="/heroes"  routerLinkActive="active">Heroes</a> 
+    <a routerLink="/competence"  routerLinkActive="active">Competences</a>
+    <a *ngIf="_UserConnected.Role=='GM'" routerLink="/reseaux"  routerLinkActive="active">Reseaux</a>
+</nav>
+
+<router-outlet></router-outlet>
+
+<app-messages></app-messages> 
+</body>

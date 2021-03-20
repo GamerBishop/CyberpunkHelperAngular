@@ -1,0 +1,55 @@
+/* AppComponent's private CSS styles */
+
+body{
+  background-image: url(../assets/imgs/CyberPunkRed.jpg);
+  background-color: black;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 100%;
+  overflow: auto;
+}
+ 
+
+
+h1 {
+  margin-bottom: 1em;
+    font-size: 38pt;
+    letter-spacing: -0.2em;
+    word-spacing: 0.3em;
+    font-family: 'cyberpunk';
+    text-align: center;
+    color: rgb(103, 58, 183);
+  }
+
+  h2 {
+    font-weight: bold;
+    margin-bottom:1 em;
+    font-size: 22pt; 
+    font-family:fantasy;
+    text-align: center;
+  }
+
+  nav{
+    
+    margin-left: 20px;
+  }
+  
+  nav a {
+    padding: 1rem;
+    text-decoration: none;
+    margin-top: 10px;
+    display: inline-block;
+    background-color: #e8e8e8;
+    color: #3d3d3d;
+    border-radius: 4px;
+    margin-right: 2mm;
+  }
+  
+  nav a:hover {
+    color: white;
+    background-color: #42545C;
+  }
+  nav a.active {
+    color: white;
+    background-color: rgb(103, 58, 183);
+  }

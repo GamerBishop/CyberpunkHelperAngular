@@ -1,0 +1,13 @@
+<h2>Mes Compétences</h2>
+<!-- <ul id="compList" class="CompetencesPerso">
+  <li *ngFor ="let CompetencesPerso of _CompetencesPersos" > 
+      <a>
+      <span class="badge">{{CompetencesPerso.Nom}} ( {{CompetencesPerso.Type}} ) </span> {{CompetencesPerso.NiveauComp}} 
+        </a>
+    </li>
+</ul> --> 
+<div id="listCentered">
+  <mat-chip-list id="compChipList" class="CompetencesPerso" >
+    <mat-chip *ngFor="let compPerso of _CompetencesPersos"> {{ compPerso.Nom}}  <b> &nbsp; ({{compPerso.Type}}) &nbsp; </b> - <b style="color: rgb(236, 52, 40); font-size: larger;"> &nbsp;{{compPerso.NiveauComp}} </b></mat-chip>
+  </mat-chip-list> 
+</div>

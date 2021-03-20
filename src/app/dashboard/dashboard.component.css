@@ -1,0 +1,65 @@
+/* DashboardComponent's private CSS styles */
+ div.Opacity{
+   margin-top: 20px;
+   padding-top: 20px;
+   padding-bottom: 20 px;
+   margin-left: 10%;
+   margin-right: 10%;
+ background-color: rgba(255, 255, 255, 0.3) ;
+ border-radius: 0.5em;
+ }
+h2 {
+    text-align: center;
+    text-decoration:underline;
+    font-size: 38pt;
+    letter-spacing: -0.2em;
+    word-spacing: 0.2em;
+    font-family: 'cyberpunk';
+  }
+  
+  .heroes-menu {
+    padding: 0;
+    margin: auto;
+    max-width: 100%;
+  
+    /* flexbox */
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-content: flex-start;
+    align-items: flex-start;
+  }
+  
+button {
+         padding: 1rem;
+    font-size: 1.2rem;
+    text-decoration: none;
+    display: inline-block;
+    color: #fff;
+    text-align: center;
+    width: 20%;
+    min-width: 70px;
+    margin: .5rem auto;
+    margin-left: 2px;
+    margin-right: 2px;
+    box-sizing: border-box;
+    font-family: cyberpunk;
+
+  
+    /* flexbox */
+    order: 0;
+    flex: 0 1 auto;
+    align-self: auto;
+  }
+  
+  @media (min-width: 600px) {
+    a {
+      width: 18%;
+      box-sizing: content-box;
+    }
+  }
+  
+  a:hover {
+    background-color: #000;
+  }

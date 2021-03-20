@@ -1,0 +1,9 @@
+<div class="Opacity">
+<h2>Top Heroes</h2>
+<div class="heroes-menu">
+  <button mat-raised-button color ="primary" *ngFor="let Hero of Heroes"
+  routerLink="/detail/{{Hero.Id}}">
+    {{Hero.Nom}}
+  </button >
+</div>
+</div>

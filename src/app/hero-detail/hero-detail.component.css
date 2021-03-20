@@ -1,0 +1,83 @@
+div{
+    color :rgb(236, 52, 40); 
+}
+
+div.ClasseHeros{
+  font-size:12pt;
+  font-weight: bolder;
+}
+
+#TestMargin{
+  margin-top: 20px;
+ margin-left: 10%;
+ padding-left:  5%;
+  max-width: 70%;
+ margin-right: 1%;
+ padding-right: 5%;
+ padding-bottom: 150px;
+ background-color: rgba(255, 255, 255, 0.3) ;
+ border-radius: 0.5em;
+}
+#LabelName{
+  font-size: 10pt;
+}
+ #hero-name{
+  font-size: 20pt;
+}
+
+span{
+    color: white;
+    font-weight: bold;
+}
+label{
+    color: blue;
+    font-weight: bold;
+}
+button{  background-color: rgb(236, 52, 40);  
+    border: 5mm , blueviolet;
+    color: white;
+    padding: 15px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 32px; 
+    margin-left: 20px;
+    margin-right: 20px;
+}
+
+button.Save { background-color: darkgreen;}
+
+table {
+  display:inline-table;
+    background-color: rgb(103, 58, 183);
+    width:100%;
+    border: black 1px solid;
+  border-collapse: collapse;
+  align-content: center;
+  align-self: center;
+  justify-content: center;
+  }
+
+  th{
+      
+    border: black 1px solid;
+    color : white;
+}
+  td{
+    border: black 1px solid;
+    text-align: center;
+    justify-content: center;
+}
+ 
+td.StatHero>*{
+  width: 30%; 
+  box-align:center;
+align-self: center;
+text-align: center;
+}
+
+app-competences-perso{
+display: block;
+text-align: center;
+align-content: center;
+}
