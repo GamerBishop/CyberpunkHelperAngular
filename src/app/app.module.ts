@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
-import {FormsModule, ReactiveFormsModule } from '@angular/forms';
+import {FormControl, FormsModule, ReactiveFormsModule } from '@angular/forms';
 import {HttpClientModule} from'@angular/common/http';
 
 //Material Imports
@@ -9,7 +9,8 @@ import {MatChipsModule} from '@angular/material/chips';
 import {MatButtonModule} from '@angular/material/button';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatInputModule} from '@angular/material/input'
-import { MatTableModule, } from '@angular/material/table';
+import { MatTableModule } from '@angular/material/table';
+import {MatSelectModule} from '@angular/material/select';
 
 
 import { AppRoutingModule } from './app-routing.module';
@@ -25,6 +26,8 @@ import { MatSortModule } from '@angular/material/sort';
 import { LoginComponent } from './login/login.component';
 import { ReseauxBoardComponent } from './reseaux-board/reseaux-board.component';
 import { ReseauxDetailComponent } from './reseaux-detail/reseaux-detail.component';
+import { NewReseauDialogComponent } from './new-reseau-dialog/new-reseau-dialog.component';
+import { MatDialogModule } from '@angular/material/dialog';
 
 @NgModule({
   declarations: [
@@ -37,7 +40,8 @@ import { ReseauxDetailComponent } from './reseaux-detail/reseaux-detail.componen
     CompetencesPersoComponent,
     LoginComponent,
     ReseauxBoardComponent,
-    ReseauxDetailComponent
+    ReseauxDetailComponent,
+    NewReseauDialogComponent
   ],
   imports: [
     MatFormFieldModule,
@@ -51,9 +55,12 @@ import { ReseauxDetailComponent } from './reseaux-detail/reseaux-detail.componen
     MatTableModule,
     MatInputModule, 
     MatSortModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    MatSelectModule,
+    MatDialogModule
     ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+  entryComponents: [NewReseauDialogComponent]
 })
 export class AppModule { }

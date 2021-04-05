@@ -2,9 +2,14 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { of } from 'rxjs';
 import { Observable } from 'rxjs';
-import { catchError } from 'rxjs/operators';
+import { catchError, tap } from 'rxjs/operators';
 import { Reseau } from 'src/classes/Reseau';
 import { MessageService } from './message.service';
+
+export interface ReseauInsert{
+  NomReseau : string;
+  Description: string;
+}
 
 @Injectable({
   providedIn: 'root'
@@ -21,8 +26,17 @@ export class ReseauService {
     this.messageService.add('ReseauxService : Reseaux fetched');
     return this.RESEAUX;
   }
+ 
 
-
+  
+  SaveNewReseau(data: Reseau) : Observable<Reseau> {
+    this.messageService.add('ReseauxService : Reseau added');
+    return this.http.post<Reseau>("http://192.168.1.35/applijdr/SaveNewReseau.php?Id="+data.Id+"&NomReseau="+data.NomReseau+"&Description="+data.Commentaire, Reseau, undefined).pipe(
+tap((data: Reseau) => {
+        return this.log(`added reseau w/ id=${data.NomReseau}`);
+      }), catchError(this.handleError<Reseau>('SaveNewReseau', )));
+    
+  }
 
   /** Log a HeroService message with the MessageService */
   public log(message: string) {

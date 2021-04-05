@@ -1,0 +1,22 @@
+<h1 mat-dialog-title>Nouveau Réseau</h1>
+
+
+
+<mat-dialog-content [formGroup]="_myForm">
+    
+    <mat-form-field>
+    <mat-label id="LabelName">Nom Réseau</mat-label>
+        <input matInput placeholder="Nom Reseau" formControlName="nomReseau" />
+
+    </mat-form-field>
+    
+    <mat-form-field>
+    <mat-label id="Desc">Description</mat-label>
+        <textarea matInput placeholder="Description" formControlName="description"></textarea>
+    </mat-form-field>
+</mat-dialog-content>
+
+<mat-dialog-actions> 
+    <button mat-raised-button (click)="close()">Close</button>
+    <button mat-button color="primary" (click)="saveReseau()">Créer</button>
+</mat-dialog-actions>

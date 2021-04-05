@@ -20,7 +20,6 @@ export class LoginService {
   }
 
   public userlogin(UserName: string, Password: string) {
-    alert(UserName)
     return this.httpClient.post<any>(this.baseUrl + 'Login.php', { UserName, Password })
       .pipe(map(Users => {
         this.setRole(Users.Role);
