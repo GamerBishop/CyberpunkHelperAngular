@@ -4,10 +4,13 @@ h1 {
     font-family: 'cyberpunk', Arial, sans-serif;
     font-size: 250%;
   }
-  h2, h3 {
+  h2 {
     color: rgb(236, 52, 40);
-    font-family: Arial, Helvetica, sans-serif;
-    font-weight: lighter;
+    font-family: Arial, Helvetica, sans-serif; 
+  }
+  h3 {
+    color: white;
+    font-family: Arial, Helvetica, sans-serif; 
   }
   
   body, input[type="text"], button {

@@ -1,8 +1,9 @@
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { of } from 'rxjs';
 import { Observable } from 'rxjs';
 import { catchError, tap } from 'rxjs/operators';
+import { Etage } from 'src/classes/etages';
 import { Reseau } from 'src/classes/Reseau';
 import { MessageService } from './message.service';
 
@@ -16,7 +17,12 @@ export interface ReseauInsert{
 })
 export class ReseauService {
 
+
+  
+
   private ReseauxUrl = 'http://192.168.1.35/applijdr/GetReseaux.php';  // URL to web api 
+  private ReseauByIdUrl = 'http://192.168.1.35/applijdr/GetReseauById.php?Id=';
+  private EtagesReseauxUrl = 'http://192.168.1.35/applijdr/GetEtagesReseaux.php?ReseauId=';
 
   private RESEAUX: Observable<Reseau[]> = new Observable<Reseau[]>();
 
@@ -25,6 +31,30 @@ export class ReseauService {
       catchError(this.handleError<Reseau[]>('getAllReseaux', [])));
     this.messageService.add('ReseauxService : Reseaux fetched');
     return this.RESEAUX;
+  }
+
+   getReseauById(id : number) : Observable<Reseau>{
+    this.messageService.add(`ReseauService: fetched Reseau id=${id}`); 
+    return this.http.get<Reseau>(this.ReseauByIdUrl + id.toString()).pipe(
+      tap(_ => this.log(`fetched hero id=${id}`)),
+      catchError(this.handleError<Reseau>(`getReseauById id=${id}`))
+    ); 
+  }
+  
+  
+  getEtagesReseauById(id: number) : Observable<Etage[]> { 
+    this.messageService.add(`ReseauService: fetched Etages from Reseau id=${id}`);
+    
+    const httpOptions = {
+      headers: new HttpHeaders({
+        'Content-Type':  'application/json; charset=UTF-8' 
+      })
+    };
+
+    return this.http.get<Etage[]>(this.EtagesReseauxUrl + id.toString()).pipe(
+      tap(_ => this.log(`fetched etages reseaux id=${id}`)),
+      catchError(this.handleError<Etage[]>(`getEtagesReseauById id=${id}`))
+    ); 
   }
  
 

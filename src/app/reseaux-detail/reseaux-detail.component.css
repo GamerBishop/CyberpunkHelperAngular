@@ -1,0 +1,82 @@
+ 
+h2{
+    padding-top: 1em;
+    font-size: 32pt;
+    text-align: center; 
+}
+
+h3{
+    text-align: center;
+}
+
+div #CommentaireReseau{
+    color: white;
+    background-color: rgb(236, 52, 40);
+    margin-left: 10%;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    border-radius: 0.2em;
+    width: 80%;
+    text-align: center;
+    font-size: 24pt;
+    font-style: italic;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+}
+
+
+div #etagesDiv{
+    margin-left: 10%;
+    margin-right: 10%;
+    width: 80%;
+  font-size:12pt;
+  font-weight: bolder;
+}
+table{
+    width: 100%;
+}
+.mat-row:nth-child(even){
+    background-color: red;
+}
+        
+.mat-row:nth-child(odd){
+    background-color: white; 
+}
+
+table { 
+      background-color: rgb(103, 58, 183);
+      width:100%; 
+    border-collapse: collapse;
+    align-content: center;
+    align-self: center;
+    justify-content: center;
+    border-radius: 0.5em;
+    }
+  
+    th{ 
+      color : white;
+      text-align: center;
+      font-size: 16pt;
+  }
+    td{ 
+      text-align: center;
+      justify-content: center;
+  }
+   
+  td.StatHero>*{
+    width: 30%; 
+    box-align:center;
+  align-self: center;
+  text-align: center;
+  }
+
+#TestMargin{
+  margin-top: 20px;
+ margin-left: 10%;
+ padding-left:  5%;
+  max-width: 70%;
+ margin-right: 1%;
+ padding-right: 5%;
+ padding-bottom: 150px;
+ background-color: rgba(255, 255, 255, 0.3) ;
+ border-radius: 0.5em;
+}

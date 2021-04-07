@@ -1,1 +1,39 @@
-<p>reseaux-detail works!</p>
+<div id="TestMargin" *ngIf="_myReseau">
+
+    <h2>{{_myReseau.NomReseau}}</h2>
+    <div id="CommentaireReseau"> " &nbsp; {{_myReseau.Commentaire}} &nbsp; "</div>
+    <h3 *ngIf="_myEtages">Nombre d'étages : {{_myEtages.length}}</h3>
+
+    <div id="etagesDiv" *ngIf="_myEtages">
+
+        <table mat-table [dataSource]="_myEtages">
+            
+            <ng-container matColumnDef="Niveau">
+                <th mat-header-cell *matHeaderCellDef> Niveau </th>
+                <td mat-cell *matCellDef="let etage"> {{etage.Niveau}} </td>
+            </ng-container>
+
+            
+            <ng-container matColumnDef="Rencontre">
+                <th mat-header-cell *matHeaderCellDef> Rencontre </th>
+                <td mat-cell *matCellDef="let etage"> {{etage.Rencontre}} </td>
+            </ng-container>
+           
+            <ng-container matColumnDef="Capacite">
+                <th mat-header-cell *matHeaderCellDef> Capacité </th>
+                <td mat-cell *matCellDef="let etage"> {{etage.Capacite}} </td>
+            </ng-container>
+
+            <ng-container matColumnDef="SD">
+                <th mat-header-cell *matHeaderCellDef> SD </th>
+                <td mat-cell *matCellDef="let etage"> {{etage.SD}} </td>
+            </ng-container>
+
+            <tr mat-header-row *matHeaderRowDef="columnsToDisplay"></tr>
+            <tr mat-row *matRowDef="let etage; columns: columnsToDisplay"></tr>
+        </table>
+          
+
+    </div>
+
+</div>

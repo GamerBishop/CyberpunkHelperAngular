@@ -8,6 +8,7 @@ import {ReseauService} from '../reseau-service.service';
 import {LoginService} from '../login-service.service';
 import { MatDialog, MatDialogConfig } from '@angular/material/dialog'; 
 import { NewReseauDialogComponent } from '../new-reseau-dialog/new-reseau-dialog.component';
+import { Router } from '@angular/router';
 
 export interface ReseauxData { 
   Id : number;
@@ -30,7 +31,7 @@ export class ReseauxBoardComponent implements OnInit {
   displayedColumns: string[] = ['Id', 'NomReseau', 'Commentaire'];
   resSource: MatTableDataSource<ReseauxData>;
 
-  constructor(private _reseauService : ReseauService, private _loginService : LoginService, public dialog : MatDialog) { 
+  constructor(private _reseauService : ReseauService, private _loginService : LoginService, public dialog : MatDialog, private router : Router) { 
     this.resSource = new MatTableDataSource<ReseauxData>(this._Reseaux);
   }
 
@@ -62,7 +63,7 @@ export class ReseauxBoardComponent implements OnInit {
   }
   
   displayReseauDetails(index: number) {
-    throw new Error('Method not implemented.');
+    this.router.navigate(['reseaux/'+index.toString()]);
   }
 
   newReseauDialog():void{
