@@ -28,7 +28,7 @@ export class ReseauxBoardComponent implements OnInit {
   _UserRole! : string ;
 
   //Table behavior elements
-  displayedColumns: string[] = ['Id', 'NomReseau', 'Commentaire'];
+  displayedColumns: string[] = [ 'NomReseau', 'Commentaire'];
   resSource: MatTableDataSource<ReseauxData>;
 
   constructor(private _reseauService : ReseauService, private _loginService : LoginService, public dialog : MatDialog, private router : Router) { 

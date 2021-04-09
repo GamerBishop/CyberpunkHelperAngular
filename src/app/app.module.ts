@@ -28,6 +28,7 @@ import { ReseauxBoardComponent } from './reseaux-board/reseaux-board.component';
 import { ReseauxDetailComponent } from './reseaux-detail/reseaux-detail.component';
 import { NewReseauDialogComponent } from './new-reseau-dialog/new-reseau-dialog.component';
 import { MatDialogModule } from '@angular/material/dialog';
+import { NewEtageDialogComponent } from './new-etage-dialog/new-etage-dialog.component';
 
 @NgModule({
   declarations: [
@@ -41,7 +42,8 @@ import { MatDialogModule } from '@angular/material/dialog';
     LoginComponent,
     ReseauxBoardComponent,
     ReseauxDetailComponent,
-    NewReseauDialogComponent
+    NewReseauDialogComponent,
+    NewEtageDialogComponent
   ],
   imports: [
     MatFormFieldModule,

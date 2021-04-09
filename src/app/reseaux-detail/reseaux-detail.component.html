@@ -6,7 +6,7 @@
 
     <div id="etagesDiv" *ngIf="_myEtages">
 
-        <table mat-table [dataSource]="_myEtages">
+        <table mat-table [dataSource]="etaSource">
             
             <ng-container matColumnDef="Niveau">
                 <th mat-header-cell *matHeaderCellDef> Niveau </th>
@@ -33,7 +33,11 @@
             <tr mat-row *matRowDef="let etage; columns: columnsToDisplay"></tr>
         </table>
           
-
+        <div class="buttons">
+            
+<button mat-raised-button (click)="goBack()">Back</button>
+            <button mat-raised-button class='NewEtage' (click)="newEtageDialog()">Ajouter un étage</button>
+        </div>
     </div>
 
 </div>

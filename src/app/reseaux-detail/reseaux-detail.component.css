@@ -21,7 +21,7 @@ div #CommentaireReseau{
     font-size: 24pt;
     font-style: italic;
     font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
-}
+} 
 
 
 div #etagesDiv{
@@ -34,16 +34,8 @@ div #etagesDiv{
 table{
     width: 100%;
 }
-.mat-row:nth-child(even){
-    background-color: red;
-}
-        
-.mat-row:nth-child(odd){
-    background-color: white; 
-}
 
 table { 
-      background-color: rgb(103, 58, 183);
       width:100%; 
     border-collapse: collapse;
     align-content: center;
@@ -53,6 +45,7 @@ table {
     }
   
     th{ 
+      background-color: rgb(103, 58, 183);
       color : white;
       text-align: center;
       font-size: 16pt;
@@ -60,15 +53,14 @@ table {
     td{ 
       text-align: center;
       justify-content: center;
+      white-space: pre;
   }
    
-  td.StatHero>*{
-    width: 30%; 
-    box-align:center;
-  align-self: center;
-  text-align: center;
-  }
+::ng-deep .mat-row:hover {
+  background-color: darkgrey;
+}
 
+ 
 #TestMargin{
   margin-top: 20px;
  margin-left: 10%;
@@ -79,4 +71,16 @@ table {
  padding-bottom: 150px;
  background-color: rgba(255, 255, 255, 0.3) ;
  border-radius: 0.5em;
+}
+
+
+div.buttons {
+  padding-top: 20px;
+  display: flex;
+  justify-content: flex-end;
+  
+}
+
+.mat-raised-button{ 
+  margin-right: 10px;
 }

@@ -22,10 +22,6 @@ export class NewReseauDialogComponent implements OnInit {
 
   _myForm: FormGroup; 
 
-  Actions: string[] = ["Porte dérobée",
-    "Analyse",
-    "Contrôle"];
-
   constructor(private fb: FormBuilder,
     private dialogRef: MatDialogRef<NewReseauDialogComponent>) { 
     this._myForm = this.fb.group({

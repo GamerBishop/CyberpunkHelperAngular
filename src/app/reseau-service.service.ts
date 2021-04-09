@@ -16,8 +16,6 @@ export interface ReseauInsert{
   providedIn: 'root'
 })
 export class ReseauService {
-
-
   
 
   private ReseauxUrl = 'http://192.168.1.35/applijdr/GetReseaux.php';  // URL to web api 
@@ -68,6 +66,24 @@ tap((data: Reseau) => {
     
   }
 
+    SaveNewEtage(newEtage: Etage) : Observable<Etage>  {
+      this.messageService.add('ReseauxService : Etage added');
+      if (newEtage.SD !== undefined) {
+        return this.http.post<Etage>("http://192.168.1.35/applijdr/SaveNewEtage.php?IdReseau="+newEtage.ReseauId.toString()+"&Niveau="+newEtage.Niveau.toString()+"&Rencontre="+newEtage.Rencontre.toString()+"&Cap="+newEtage.Capacite+"&SD="+newEtage.SD.toString(), Etage, undefined).pipe(
+        tap((data: Etage) => {
+                return this.log(`added etage w/ id=${data.Id}`);
+              }), catchError(this.handleError<Etage>('SaveNewEtage', )));
+      }else{
+        return this.http.post<Etage>("http://192.168.1.35/applijdr/SaveNewEtage.php?IdReseau="+newEtage.ReseauId.toString()+"&Niveau="+newEtage.Niveau.toString()+"&Rencontre="+newEtage.Rencontre.toString()+"&Cap="+newEtage.Capacite+"&SD=", Etage, undefined).pipe(
+        tap((data: Etage) => {
+                return this.log(`added etage w/ id=${data.Id}`);
+              }), catchError(this.handleError<Etage>('SaveNewEtage', )));
+      
+      }
+            
+    }
+
+    //#region  Log
   /** Log a HeroService message with the MessageService */
   public log(message: string) {
     this.messageService.add(`ReseauService: ${message}`);
@@ -91,6 +107,7 @@ tap((data: Reseau) => {
       return of(result as T);
     };
   }
+  //#endregion
   
 
   constructor(private http: HttpClient,

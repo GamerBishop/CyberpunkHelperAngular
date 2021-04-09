@@ -1,0 +1,35 @@
+<h1 mat-dialog-title>Nouvel Etage</h1> 
+
+<mat-dialog-content [formGroup]="_myForm">
+    
+    <mat-form-field>
+    <mat-label id="LabelName">Niveau</mat-label>
+        <input matInput placeholder="Niveau" formControlName="niveauEtage" /> 
+    </mat-form-field>
+    
+    <mat-form-field>
+    <mat-label id="Renc">Rencontre</mat-label>
+        <textarea matInput placeholder="Rencontre" formControlName="rencontre"></textarea>
+    </mat-form-field>
+
+    <mat-form-field>
+        <mat-label id="Act">Action</mat-label>
+        <mat-select formControlName="action" [(value)]="selected">
+            <mat-option>None</mat-option>
+            <mat-option value="Porte dérobée">Porte dérobée</mat-option>
+            <mat-option value="Analyse">Analyse</mat-option>
+            <mat-option value="Contrôle">Contrôle</mat-option>
+      </mat-select>
+    </mat-form-field>
+
+    <mat-form-field>
+        <mat-label id="LabelName">SD</mat-label>
+            <input matInput placeholder="Seuil de Difficulté" formControlName="sd" /> 
+        </mat-form-field>
+
+</mat-dialog-content>
+
+<mat-dialog-actions> 
+    <button mat-raised-button (click)="close()">Close</button>
+    <button mat-button color="primary" (click)="saveEtage()">Créer</button>
+</mat-dialog-actions>
